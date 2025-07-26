@@ -131,6 +131,7 @@ public class BaseLibrary extends Data{
         actions.moveToElement(element).perform();
     }
 
+    @Step("Switch to the lever page browser tab")
     public void switchToNewTab() {
         String originalWindow = driver.getWindowHandle();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

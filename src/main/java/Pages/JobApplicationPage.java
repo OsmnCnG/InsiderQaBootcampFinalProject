@@ -47,6 +47,7 @@ public class JobApplicationPage extends BaseLibrary {
     public void waitJobApplicationPageLoaded(){
         waitForElementToBeVisible(applyForThisJobBtns);
         waitForElementToBeVisible(jobHeadline);
+        screenshot();
     }
 
     public void applyForThisJob(){

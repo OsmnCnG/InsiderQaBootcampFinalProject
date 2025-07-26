@@ -159,7 +159,6 @@ public class JobListPage extends BaseLibrary {
                 clickElementWithJs(viewRoleButton);
 
                 switchToNewTab();
-                screenshot();
                 return new JobApplicationPage(driver);
             }
         }

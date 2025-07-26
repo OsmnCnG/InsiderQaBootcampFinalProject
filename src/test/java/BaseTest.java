@@ -20,8 +20,8 @@ public class BaseTest{
         homePage.clickAcceptCookie();
     }
 
-//    @AfterMethod
-//    public void afterBrowser(){
-//        driver.quit();
-//    }
+    @AfterMethod
+    public void afterBrowser(){
+        driver.quit();
+    }
 }
