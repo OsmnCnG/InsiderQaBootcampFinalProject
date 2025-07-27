@@ -116,11 +116,12 @@ public class JobListPage extends BaseLibrary {
     }
 
     @Step("Check Job Details are correct")
-    public void verifyJobDetailPositionDepartmentLocation(String expPositionTitle, String expPositionDepartment, String expPositionLocation){
+    public void verifyJobDetailPositionDepartmentLocation(String expPositionTitle, String expPositionDepartment, String expPositionLocation) throws InterruptedException {
 
         List<WebElement> qaJobListingItems = driver.findElements(By.cssSelector("div.position-list-item"));
 
 //        waitForElementToBeVisible(qaJobListingItems);
+        Thread.sleep(5000);
 
         for(WebElement jobItem : qaJobListingItems){
 
