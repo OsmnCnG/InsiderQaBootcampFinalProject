@@ -147,8 +147,6 @@ public class JobListPage extends BaseLibrary {
     @Step("Go to the Job Application Page")
     public JobApplicationPage goToJobApplicationPage(String position){
 
-        List<WebElement> qaJobListingItems = driver.findElements(By.cssSelector("div.position-list-item"));
-
         for (WebElement jobItem : qaJobListingItems) {
             WebElement titleElement = jobItem.findElement(By.className("position-title"));
             String actualTitle = titleElement.getText();
