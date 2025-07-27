@@ -79,7 +79,7 @@ public class BaseLibrary extends Data{
      * Waits until the given WebElement is clickable before proceeding
      */
     public void waitForElementToBeClickable(WebElement element){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
@@ -87,7 +87,7 @@ public class BaseLibrary extends Data{
      * Waits until the given WebElements is clickable before proceeding
      */
     public void waitForElementsToBeClickable(List<WebElement> elements){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         for (WebElement element : elements){
             wait.until(ExpectedConditions.elementToBeClickable(element));
         }
@@ -97,18 +97,13 @@ public class BaseLibrary extends Data{
      * Waits until the specified WebElement is visible on the page
      */
     public void waitForElementToBeVisible(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    /**
-     * Waits until the specified WebElements is visible on the page
-     */
     public void waitForElementsToBeVisible(List<WebElement> elements) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        for(WebElement element : elements){
-            wait.until(ExpectedConditions.visibilityOf(element));
-        }
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfAllElements(elements));
     }
 
 
