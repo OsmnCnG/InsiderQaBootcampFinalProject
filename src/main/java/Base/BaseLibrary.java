@@ -101,6 +101,9 @@ public class BaseLibrary extends Data{
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
+    /**
+     * Waits until the WebElements is visible on the page
+     */
     public void waitForElementsToBeVisible(List<WebElement> elements) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfAllElements(elements));
@@ -151,11 +154,17 @@ public class BaseLibrary extends Data{
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
     }
 
+    /**
+     * Click element
+     */
     public void clickElementAction(WebElement element) {
         Actions actions = new Actions(driver);
         actions.moveToElement(element).click().perform();
     }
 
+    /**
+     * Click element with showing steps
+     */
     @Step("Click on: {elementName}")
     public void clickElementActionShowStep(WebElement element,String elementName) {
         Actions actions = new Actions(driver);

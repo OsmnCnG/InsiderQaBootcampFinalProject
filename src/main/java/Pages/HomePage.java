@@ -27,7 +27,7 @@ public class HomePage extends BaseLibrary {
         driver.get(homePageUrl);
     }
 
-    @Step("Click Accept-Cookies button")
+    @Step("Click Accept-Cookies-Button")
     public void clickAcceptCookie() {
         clickAcceptCookies.click();
     }
