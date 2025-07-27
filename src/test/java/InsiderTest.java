@@ -2,7 +2,9 @@ import Pages.CareersPage;
 import Pages.JobApplicationPage;
 import Pages.JobListPage;
 import Pages.QualityAssurancePage;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class InsiderTest extends BaseTest{
 
@@ -37,7 +39,6 @@ public class InsiderTest extends BaseTest{
 
         jobApplicationPage.verifyRedirectionToLeverUrl();
         jobApplicationPage.checkJobTitleMatch("Software Quality Assurance Engineer");
-
     }
 
 

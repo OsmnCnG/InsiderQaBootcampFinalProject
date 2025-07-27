@@ -1,14 +1,15 @@
 package Pages;
 
 import Base.BaseLibrary;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -164,4 +165,21 @@ public class JobListPage extends BaseLibrary {
         }
         throw new NoSuchElementException("No position found: " + position);
     }
+
+    public void assertSoftTrue(SoftAssert softAssert, boolean condition, String expected, String actual, String message) {
+        String fullMessage = String.format(
+                "%s%nExpected: %s%nActual  : %s",
+                message, expected, actual
+        );
+
+        if (!condition) {
+            Allure.step("Assertion failed: " + fullMessage);
+            screenshot();
+        } else {
+            Allure.step("Assertion passed: " + fullMessage);
+        }
+
+        softAssert.assertTrue(condition, fullMessage);
+    }
+
 }

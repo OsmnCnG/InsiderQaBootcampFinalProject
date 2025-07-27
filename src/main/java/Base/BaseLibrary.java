@@ -1,6 +1,7 @@
 package Base;
 
 import Pages.CareersPage;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 import org.openqa.selenium.OutputType;
@@ -57,13 +58,12 @@ public class BaseLibrary extends Data{
      * Asserts that actual and expected values are equal.
      * If they are not, a screenshot will be captured and the test will fail with a message
      */
-    public void assertEqualsText(String actual, String expected, String message){
-        try {
-            Assert.assertEquals(actual, expected, message);
-        } catch (AssertionError e) {
+    public void assertEqualsText(String actual, String expected, String message) {
+        if (!actual.equals(expected)) {
+            Allure.step("Assertion failed: " + message);
             screenshot();
-            throw e;
         }
+        Assert.assertEquals(actual, expected, message);
     }
 
     /**
@@ -131,7 +131,7 @@ public class BaseLibrary extends Data{
         actions.moveToElement(element).perform();
     }
 
-    @Step("Switch to the lever page browser tab")
+    @Step("Switch to the new browser tab")
     public void switchToNewTab() {
         String originalWindow = driver.getWindowHandle();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -145,7 +145,6 @@ public class BaseLibrary extends Data{
             }
         }
     }
-
 
     /**
      * Click element with scroll
@@ -165,7 +164,6 @@ public class BaseLibrary extends Data{
         Actions actions = new Actions(driver);
         actions.moveToElement(element).click().perform();
     }
-
 
 
 
