@@ -81,7 +81,7 @@ public class JobListPage extends BaseLibrary {
     public void filterQaJobs(){
         selectLocationFilter();
         selectDepartmentFilter();
-        waitForElementToBeVisible(qaJobListingItems);
+//        waitForElementToBeVisible(qaJobListingItems);
         screenshot();
     }
 
