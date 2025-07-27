@@ -90,6 +90,7 @@ public class JobListPage extends BaseLibrary {
 
     @Step("Select location filter")
     public void selectLocationFilter(){
+        waitForElementToBeVisible(filterByLocationDropdown);
         waitForElementToBeClickable(filterByLocationDropdown);
         clickElementActionShowStep(filterByLocationDropdown,"filterByLocationDropdown");
         waitForElementToBeVisible(filterByLocationResults);
@@ -122,6 +123,7 @@ public class JobListPage extends BaseLibrary {
     public void verifyJobDetailPositionDepartmentLocation(String expPositionTitle, String expPositionDepartment, String expPositionLocation){
 
         waitForElementsToBeVisible(qaJobListingItems);
+        scrollToElement(qaJobListingItems.get(0));
 
         for(WebElement jobItem : qaJobListingItems){
 
