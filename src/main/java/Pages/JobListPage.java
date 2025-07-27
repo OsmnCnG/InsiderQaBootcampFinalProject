@@ -171,20 +171,4 @@ public class JobListPage extends BaseLibrary {
         throw new NoSuchElementException("No position found: " + position);
     }
 
-    public void assertSoftTrue(SoftAssert softAssert, boolean condition, String expected, String actual, String message) {
-        String fullMessage = String.format(
-                "%s%nExpected: %s%nActual  : %s",
-                message, expected, actual
-        );
-
-        if (!condition) {
-            Allure.step("Assertion failed: " + fullMessage);
-            screenshot();
-        } else {
-            Allure.step("Assertion passed: " + fullMessage);
-        }
-
-        softAssert.assertTrue(condition, fullMessage);
-    }
-
 }
