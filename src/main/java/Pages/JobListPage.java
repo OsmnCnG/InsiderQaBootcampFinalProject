@@ -57,9 +57,6 @@ public class JobListPage extends BaseLibrary {
 //    @FindBy(className = "position-list-item")
 //    List<WebElement> qaJobListingItems;
 
-    @FindBy(xpath = "//div[@id='jobs-list']//div[contains(@class, 'position-list-item')]")
-    List<WebElement> qaJobListingItems;
-
     @FindBy(className = "position-title")
     WebElement positionTitle;
 
@@ -121,6 +118,8 @@ public class JobListPage extends BaseLibrary {
     @Step("Check Job Details are correct")
     public void verifyJobDetailPositionDepartmentLocation(String expPositionTitle, String expPositionDepartment, String expPositionLocation){
 
+        List<WebElement> qaJobListingItems = driver.findElements(By.cssSelector("div.position-list-item"));
+
         waitForElementToBeVisible(qaJobListingItems);
 
         for(WebElement jobItem : qaJobListingItems){
@@ -149,6 +148,8 @@ public class JobListPage extends BaseLibrary {
 
     @Step("Go to the Job Application Page")
     public JobApplicationPage goToJobApplicationPage(String position){
+
+        List<WebElement> qaJobListingItems = driver.findElements(By.cssSelector("div.position-list-item"));
 
         for (WebElement jobItem : qaJobListingItems) {
             WebElement titleElement = jobItem.findElement(By.className("position-title"));
