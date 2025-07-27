@@ -57,6 +57,9 @@ public class JobListPage extends BaseLibrary {
 //    @FindBy(className = "position-list-item")
 //    List<WebElement> qaJobListingItems;
 
+    @FindBy(css = "[data-team='qualityassurance']")
+    List<WebElement> qaJobListingItems;
+
     @FindBy(className = "position-title")
     WebElement positionTitle;
 
@@ -115,16 +118,12 @@ public class JobListPage extends BaseLibrary {
         assertEqualsText(filterByLocationDropdown.getAttribute("textContent").replace("×", "").trim(),expected,"Location text does not match expected value!");
     }
 
-    public List<WebElement> getQaJobListingItems() {
-        return driver.findElements(By.className("position-list-item"));
-    }
-
     @Step("Check Job Details are correct")
     public void verifyJobDetailPositionDepartmentLocation(String expPositionTitle, String expPositionDepartment, String expPositionLocation){
 
-        waitForElementToBeVisible(getQaJobListingItems());
+        waitForElementToBeVisible(qaJobListingItems);
 
-        for(WebElement jobItem : getQaJobListingItems()){
+        for(WebElement jobItem : qaJobListingItems){
 
             WebElement titleElement = jobItem.findElement(By.className("position-title"));
             WebElement departmentElement = jobItem.findElement(By.className("position-department"));
@@ -151,7 +150,7 @@ public class JobListPage extends BaseLibrary {
     @Step("Go to the Job Application Page")
     public JobApplicationPage goToJobApplicationPage(String position){
 
-        for (WebElement jobItem : getQaJobListingItems()) {
+        for (WebElement jobItem : qaJobListingItems) {
             WebElement titleElement = jobItem.findElement(By.className("position-title"));
             String actualTitle = titleElement.getText();
             if (actualTitle.equals(position)) {
