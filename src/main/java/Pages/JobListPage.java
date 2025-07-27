@@ -54,7 +54,7 @@ public class JobListPage extends BaseLibrary {
     @FindBy(id = "select2-filter-by-department-results")
     WebElement filterByDepartmentDropdownOptions;
 
-    @FindBy(css = ".position-list-item")
+    @FindBy(className = "position-list-item")
     List<WebElement> qaJobListingItems;
 
     @FindBy(className = "position-title")
