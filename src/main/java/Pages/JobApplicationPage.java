@@ -44,6 +44,9 @@ public class JobApplicationPage extends BaseLibrary {
                 "Job Title does not match! Expected: '" + expectedTitle + "', but found: '" + actualJobTitle + "'");
     }
 
+    /**
+     * Waits for the job application page to be fully loaded
+    */
     public void waitJobApplicationPageLoaded(){
         waitForElementsToBeVisible(applyForThisJobBtns);
         waitForElementToBeVisible(jobHeadline);
