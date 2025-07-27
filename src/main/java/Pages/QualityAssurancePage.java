@@ -11,8 +11,6 @@ public class QualityAssurancePage extends BaseLibrary {
 
     public QualityAssurancePage(WebDriver driver){
         super(driver);
-        this.driver = driver;
-        PageFactory.initElements(driver,this);
     }
 
     // =================== QA Page Elements ===================

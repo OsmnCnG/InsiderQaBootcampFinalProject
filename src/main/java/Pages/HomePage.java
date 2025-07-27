@@ -11,8 +11,6 @@ public class HomePage extends BaseLibrary {
 
     public HomePage(WebDriver driver){
         super(driver);
-        this.driver = driver;
-        PageFactory.initElements(driver,this);
     }
 
     // =================== Home Page Elements ===================

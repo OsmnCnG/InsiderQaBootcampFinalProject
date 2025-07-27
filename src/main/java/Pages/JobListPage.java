@@ -18,8 +18,6 @@ public class JobListPage extends BaseLibrary {
 
     public JobListPage(WebDriver driver){
         super(driver);
-        this.driver=driver;
-        PageFactory.initElements(driver,this);
     }
 
     // =================== Job List Page Elements ===================

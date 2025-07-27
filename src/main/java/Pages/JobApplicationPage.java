@@ -15,8 +15,6 @@ public class JobApplicationPage extends BaseLibrary {
 
     public JobApplicationPage(WebDriver driver){
         super(driver);
-        this.driver = driver;
-        PageFactory.initElements(driver,this);
     }
 
     // =================== Job Application Page Elements ===================

@@ -12,8 +12,6 @@ public class CareersPage extends BaseLibrary {
 
     public CareersPage(WebDriver driver){
         super(driver);
-        this.driver =driver;
-        PageFactory.initElements(driver,this);
     }
 
     // =================== Careers Page Elements ===================
