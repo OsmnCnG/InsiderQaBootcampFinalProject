@@ -57,7 +57,7 @@ public class JobListPage extends BaseLibrary {
 //    @FindBy(className = "position-list-item")
 //    List<WebElement> qaJobListingItems;
 
-    @FindBy(css = "[data-team='qualityassurance']")
+    @FindBy(xpath = "//div[@id='jobs-list']//div[contains(@class, 'position-list-item')]")
     List<WebElement> qaJobListingItems;
 
     @FindBy(className = "position-title")
