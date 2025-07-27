@@ -1,8 +1,17 @@
 # Insider QaBootcamp Final Project
 
 ## Overview
-This project is an automated test suite developed for Insider's website(https://useinsider.com/).  
-The tests cover the Quality Assurance job listings, including filtering by location and department, validating job details, and verifying redirection to the external Lever application page.
+
+This project is an automated test suite developed for Insider's website (https://useinsider.com/).  
+It focuses on verifying Quality Assurance job listings by checking location and department filters, validating job details, and ensuring correct redirection to the external Lever application page.
+
+The test suite is integrated with a Jenkins pipeline, allowing tests to be executed automatically on each code push.
+
+---
+## Test Run Demo
+
+Watch the test execution and Allure report generation here:  
+[https://www.loom.com/share/0a2eef4be499426f9a55265424258ff5?sid=0b909948-2c20-41ac-9e61-ae3a6fcb398a](https://www.loom.com/share/0a2eef4be499426f9a55265424258ff5?sid=0b909948-2c20-41ac-9e61-ae3a6fcb398a)
 
 ---
 
@@ -26,13 +35,26 @@ The tests cover the Quality Assurance job listings, including filtering by locat
 ## Technologies
 - Java
 - Selenium WebDriver
-- TestNG
 - Allure Reporting
+- Jenkins
+- TestNG
 - Maven for build and dependency management
 
 
 ---
 
+## CI/CD Pipeline
+
+This project uses **Jenkins** for CI/CD.
+
+- A GitHub webhook triggers the Jenkins pipeline on each push.
+- Jenkins runs tests and generates an **Allure** report.
+- During development, Jenkins runs locally, and the webhook endpoint is exposed to the internet using **Ngrok**.
+
+This setup ensures that test results are always up to date and the project remains stable throughout the development process.
+
+
+---
 
 ## Screenshots in Allure Reports
 
