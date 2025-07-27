@@ -116,7 +116,7 @@ public class JobListPage extends BaseLibrary {
     }
 
     @Step("Check Job Details are correct")
-    public void verifyJobDetailPositionDepartmentLocation(String expPositionTitle, String expPositionDepartment, String expPositionLocation) throws InterruptedException {
+    public void verifyJobDetailPositionDepartmentLocation(String expPositionTitle, String expPositionDepartment, String expPositionLocation){
 
         waitForElementsToBeVisible(qaJobListingItems);
 
