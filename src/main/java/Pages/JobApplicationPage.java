@@ -45,13 +45,13 @@ public class JobApplicationPage extends BaseLibrary {
     }
 
     public void waitJobApplicationPageLoaded(){
-        waitForElementToBeVisible(applyForThisJobBtns);
+        waitForElementsToBeVisible(applyForThisJobBtns);
         waitForElementToBeVisible(jobHeadline);
         screenshot();
     }
 
     public void applyForThisJob(){
-        waitForElementToBeVisible(applyForThisJobBtns);
+        waitForElementsToBeVisible(applyForThisJobBtns);
         waitForElementsToBeClickable(applyForThisJobBtns);
         applyForThisJobBtns.get(0).click();
     }

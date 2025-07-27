@@ -54,8 +54,8 @@ public class JobListPage extends BaseLibrary {
     @FindBy(id = "select2-filter-by-department-results")
     WebElement filterByDepartmentDropdownOptions;
 
-//    @FindBy(className = "position-list-item")
-//    List<WebElement> qaJobListingItems;
+    @FindBy(css = ".position-list-item")
+    List<WebElement> qaJobListingItems;
 
     @FindBy(className = "position-title")
     WebElement positionTitle;
@@ -81,7 +81,7 @@ public class JobListPage extends BaseLibrary {
     public void filterQaJobs(){
         selectLocationFilter();
         selectDepartmentFilter();
-//        waitForElementToBeVisible(qaJobListingItems);
+        waitForElementsToBeVisible(qaJobListingItems);
         screenshot();
     }
 
@@ -118,10 +118,7 @@ public class JobListPage extends BaseLibrary {
     @Step("Check Job Details are correct")
     public void verifyJobDetailPositionDepartmentLocation(String expPositionTitle, String expPositionDepartment, String expPositionLocation) throws InterruptedException {
 
-        List<WebElement> qaJobListingItems = driver.findElements(By.cssSelector("div.position-list-item"));
-
-//        waitForElementToBeVisible(qaJobListingItems);
-        Thread.sleep(5000);
+        waitForElementsToBeVisible(qaJobListingItems);
 
         for(WebElement jobItem : qaJobListingItems){
 
