@@ -120,7 +120,7 @@ public class JobListPage extends BaseLibrary {
 
         List<WebElement> qaJobListingItems = driver.findElements(By.cssSelector("div.position-list-item"));
 
-        waitForElementToBeVisible(qaJobListingItems);
+//        waitForElementToBeVisible(qaJobListingItems);
 
         for(WebElement jobItem : qaJobListingItems){
 
