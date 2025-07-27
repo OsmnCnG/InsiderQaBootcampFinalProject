@@ -21,7 +21,6 @@ public class InsiderTest extends BaseTest{
         Thread.sleep(5000);
         jobListPage.waitJobListPageLoaded();
         jobListPage.filterQaJobs();
-        Thread.sleep(5000);
         // The test case document states the location as "Istanbul, Turkey", but the UI displays it as "Istanbul, Turkiye"
         // Adjusting the verification accordingly to use "Istanbul, Turkiye"
         jobListPage.verifyLocationSelected("Istanbul, Turkiye");
