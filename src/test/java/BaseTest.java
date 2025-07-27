@@ -3,6 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class BaseTest{
 
@@ -11,8 +12,10 @@ public class BaseTest{
 
     @BeforeMethod
     public void openBrowser(){
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--window-size=1920,1080");
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         //driver.get(homePageUrl);
         homePage = new HomePage(driver);
         homePage.goToHomePage();
