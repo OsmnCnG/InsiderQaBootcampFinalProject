@@ -105,7 +105,7 @@ public class BaseLibrary extends Data{
      * Waits until the specified WebElements is visible on the page
      */
     public void waitForElementsToBeVisible(List<WebElement> elements) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOfAllElements(elements));
     }
 
