@@ -10,7 +10,7 @@ The test suite is integrated with a Jenkins pipeline, allowing tests to be execu
 ---
 ## Test Run Demo
 
-Watch the test execution and Allure report generation here:  
+Watch the Allure report results here:
 [https://www.loom.com/share/0a2eef4be499426f9a55265424258ff5?sid=0b909948-2c20-41ac-9e61-ae3a6fcb398a](https://www.loom.com/share/0a2eef4be499426f9a55265424258ff5?sid=0b909948-2c20-41ac-9e61-ae3a6fcb398a)
 
 ---
