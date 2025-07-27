@@ -14,7 +14,7 @@ public class BaseTest{
     public void openBrowser(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--window-size=1920,1080");
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
         //driver.manage().window().maximize();
         //driver.get(homePageUrl);
         homePage = new HomePage(driver);
