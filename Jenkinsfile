@@ -26,13 +26,6 @@ pipeline {
                 bat 'mvn test'
             }
         }
-
-        stage('Allure Report') {
-            steps {
-                echo 'Generating Allure report...'
-                bat 'mvn allure:report'
-            }
-        }
     }
 
     post {
