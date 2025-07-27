@@ -1,0 +1,2 @@
+"DESCRİPTİON","DURATİON İN MS","NAME","PARENT SUİTE","START TİME","STATUS","STOP TİME","SUB SUİTE","SUİTE","TEST CLASS","TEST METHOD"
+"","18190","Verify homepage navigation, QA job filters, and application page redirection","Surefire suite","Sun Jul 27 18:23:05 TRT 2025","passed","Sun Jul 27 18:23:23 TRT 2025","InsiderTest","Surefire test","InsiderTest","qaJobApplyToInsiderTest"
