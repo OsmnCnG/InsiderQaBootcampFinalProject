@@ -107,7 +107,7 @@ public class BaseLibrary extends Data{
     public void waitForElementsToBeVisible(List<WebElement> elements) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         for(WebElement element : elements){
-            wait.until(ExpectedConditions.visibilityOf(element));
+            wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(element)));
         }
     }
 
